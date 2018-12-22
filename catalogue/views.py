@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from catalogue.models import Book, Author, BookInstance, Genre
 
-# Create your views here.
+# Create your views here..
 
 
 def index(request):
     """View function for home page of site."""
 
-    # Generate counts of some of the main objects
+    # Generate counts of some of the main objects.
     num_books = Book.objects.all().count()
     num_instances = BookInstance.objects.all().count()
 
-    # Available books (status = 'a')
+    # Available books (status = 'a').
     num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 
     # The 'all()' is implied by default.
